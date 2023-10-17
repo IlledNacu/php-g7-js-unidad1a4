@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 9. Se le solicita al usuario que ingrese su nombre y luego su apellido. Realice un 
+        // programa que arme y muestre el mensaje "Bienvenido", seguido del nombre y apellido 
+        // del usuario.
+
+        var nombre = prompt('Ingrese su nombre:');
+        var apellido = prompt("Ingrese su apellido:");
+
+        document.write("Bienvenido, ", nombre, " ", apellido);
+
+        // 10. Se le solicita al usuario que ingrese el diámetro de un círculo. Realice un programa 
+        // para calcular e informar el perímetro y el área del círculo. Se considerará para este 
+        // ejercicio que el valor de PI será 3.1416.
+
+        var pi = 3.1416
+        var diametro = prompt("Ingrese el diámetro del círculo:");
+        var radio = diametro / 2;
+        perimetro = pi * diametro;
+        area = pi * (radio ** 2);
+
+        document.write("<br>Perímetro del círculo: " + perimetro);
+        document.write("<br>Área del círculo: " + area);
+
+        // 11. Se le solicita al usuario que ingrese 4 números. Realice un programa para calcular e 
+        // informar la suma y el promedio.
+
+        var n1 = parseInt(prompt("Ingrese un número:"));
+        var n2 = parseInt(prompt("Ingrese otro número:"));
+        var n3 = parseInt(prompt("Ingrese otro número:"));
+        var n4 = parseInt(prompt("Ingrese el último número:"));
+
+        var suma = n1 + n2 + n3 + n4;
+
+        document.write("<br>El total es ", suma, " y el promedio es ", suma / 4);
+
+        // 12. Realizar un sistema para el cálculo de sueldos de una empresa. Se le solicita que
+        // ingrese el valor de la hora y la cantidad de horas trabajadas en el mes. Realice un
+        // programa para calcular e informar el sueldo mensual del empleado.
+
+        var valorxhora = parseFloat(prompt("Ingrese el valor por hora:"));
+        var horasxmes = parseInt(prompt("Ingrese la cantidad de horas trabajadas en el mes:"));
+
+        var sueldo = valorxhora * horasxmes;
+        document.write("<br>Sueldo: ", sueldo);
+
+        // 13. Realizar un sistema para el cálculo de sueldos de una empresa. Se le solicita que
+        // ingrese el valor de la hora, la cantidad de horas trabajadas en el mes y los años de
+        // antigüedad en la empresa. Realice un programa para calcular e informar el sueldo
+        // mensual del empleado, teniendo en cuenta que se le asigna un bono mensual igual al
+        // 15% del sueldo por año de antigüedad.
+
+        valorxhora = parseFloat(prompt("Ingrese el valor por hora:"));
+        horasxmes = parseInt(prompt("Ingrese la cantidad de horas trabajadas en el mes:"));
+        antiguedad = parseInt(prompt("Ingrese la cantidad de años de antigüedad en la empresa:"));
+
+        bono = antiguedad * 15
+        sueldo = (valorxhora * horasxmes) + (valorxhora * horasxmes) * bono / 100
+
+        document.write("<br>Sueldo: ", sueldo);
+
+        // 14. Realizar un sistema para el cálculo de sueldo de una empresa de seguros. Se le 
+        // solicita que ingrese el valor de la hora, la cantidad de horas trabajadas en el mes, los 
+        // años de antigüedad, la cantidad de seguros vendidos y el valor del seguro más caro 
+        // vendido. Realice un programa para calcular e informar el sueldo mensual del 
+        // empleado, teniendo en cuenta que se le asigna un bono igual al 50% del seguro más
+        // caro vendido, un bono igual al 25% del sueldo por la cantidad de seguros vendidos y 
+        // otro bono igual al 15% del sueldo por año de antigüedad. Una vez obtenido el sueldo 
+        // final, calcular e informar el valor promedio de la hora del empleado.
+
+        valorxhora = parseFloat(prompt("Ingrese el valor por hora:"));
+        horasxmes = parseInt(prompt("Ingrese la cantidad de horas trabajadas en el mes:"));
+        antiguedad = parseInt(prompt("Ingrese la cantidad de años de antigüedad en la empresa:"));
+        segurosvendidos = parseInt(prompt("Ingrese la cantidad de seguros vendidos:"));
+        valorseguro = parseFloat(prompt("Ingrese el valor del seguro más caro vendido:"));
+
+        bono = (valorseguro * 50)/100
+        sueldo = valorxhora * horasxmes
+        var bono2 = ((sueldo * 25)/ 100) * (segurosvendidos)
+        var bono3 = ((sueldo * 15)/100) * (antiguedad)
+
+        document.write("<br>Sueldo: ", (sueldo + bono + bono2 + bono3));
+    </script>
+</body>
+
+</html>
