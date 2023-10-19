@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cajero automático</title>
+</head>
+<body>
+
+<script>
+
+const opciones = ["1=Consultar Saldo", "2=Depositar", "3=Extraer"];
+var opcion_cajero=parseInt(prompt("Elija una opción (el número por favor):\n" + opciones.join("\n")));
+let saldo=1000;
+
+switch (opcion_cajero){
+    case 1:
+        console.log("Consultar Saldo")
+        break
+    case 2:
+        console.log("Depositar")
+        break
+    case 3:
+        console.log("Extraer")
+        var cantidad_de_retiro = parseInt(prompt("Escriba la cantidad que desea retirar (solo números, por favor):"));
+        if (saldo>=cantidad_de_retiro) {
+            console.log("Sí puede retirar");
+            console.log("Dinero entregado: " + cantidad_de_retiro);
+            console.log("Saldo actual: "+ (saldo-cantidad_de_retiro));
+            alert ("Dinero entregado=" + cantidad_de_retiro+ ". Su saldo actual es de: " + (saldo-cantidad_de_retiro) );
+        }else{
+            console.log ("No tiene saldo suficiente");
+        }
+        break
+
+    default:
+        console.log("Respuesta por default")
+}
+
+
+</script>
+
+</body>
+</html>
