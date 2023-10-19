@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendedora de galletas</title>
+</head>
+<body>
+
+<script>
+
+function capitalizarPrimeraLetra(palabra) {
+  return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+}
+  const productos = ["Saladitas", "Barritas", "Trikitrakes", "Pinguinos", "Negritos", "Canelitas", "Animalitos"];
+  const precios = [10, 20, 30, 40, 50, 60, 70];
+  const productoElegido = capitalizarPrimeraLetra(prompt("Elige un producto:\n" + productos.join("\n")).trim());
+  const indiceProducto = productos.indexOf(productoElegido);
+  if (indiceProducto !== -1) {
+    const cantidad = parseInt(prompt("Ingresa la cantidad que deseas comprar:"));
+    if (!isNaN(cantidad) && cantidad > 0) {
+      const precioUnitario = precios[indiceProducto];
+      const precioTotal = cantidad * precioUnitario;
+      alert(`Has elegido ${cantidad} paquetes de ${productoElegido} a $${precioUnitario} pesos cada uno.\nTotal a pagar: $${precioTotal}`);
+    } else {
+      alert("La cantidad ingresada no es válida.");
+    }
+  } else {
+    alert("Producto no válido. Por favor, elige un producto de la lista.");
+  }
+</script>
+
+</body>
+</html>
